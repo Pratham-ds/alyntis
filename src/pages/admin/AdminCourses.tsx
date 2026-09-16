@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Plus, Edit3, Trash2, BookOpen, X, Save, Loader2 } from 'lucide-react';
+import { Plus, Edit3, Trash2, BookOpen, X, Save, Loader2, FileText } from 'lucide-react';
 import PlatformNav from '@/components/layout/PlatformNav';
 import SEO from '@/components/ui/SEO';
 import LoadingState from '@/components/ui/LoadingState';
@@ -8,6 +8,7 @@ import EmptyState from '@/components/ui/EmptyState';
 import { useAuth } from '@/context/AuthContext';
 import { supabase } from '@/lib/supabase';
 import type { Course } from '@/types';
+import ResourceManager from '@/components/admin/ResourceManager';
 
 const adminLinks = [
   { label: 'Dashboard', to: '/admin' },
@@ -43,6 +44,7 @@ export default function AdminCourses() {
     status: 'available' as 'available' | 'coming_soon',
   });
   const [saving, setSaving] = useState(false);
+  const [managingResourcesFor, setManagingResourcesFor] = useState<Course | null>(null);
 
   const loadCourses = async () => {
     const { data } = await supabase.from('courses').select('*').order('sort_order', { ascending: true });
@@ -168,6 +170,13 @@ export default function AdminCourses() {
                         Edit
                       </button>
                       <button
+                        onClick={() => setManagingResourcesFor(course)}
+                        className="inline-flex items-center gap-1.5 rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-xs font-semibold text-white transition-colors hover:bg-white/10"
+                      >
+                        <FileText className="h-3.5 w-3.5" />
+                        Resources
+                      </button>
+                      <button
                         onClick={() => handleDelete(course.id)}
                         className="inline-flex items-center gap-1.5 rounded-lg border border-red-500/20 bg-red-500/10 px-3 py-2 text-xs font-semibold text-red-400 transition-colors hover:bg-red-500/20"
                       >
@@ -260,6 +269,31 @@ export default function AdminCourses() {
                     </button>
                   </div>
                 </form>
+              </div>
+            </div>
+          )}
+
+          {/* Resource manager modal */}
+          {managingResourcesFor && (
+            <div className="fixed inset-0 z-[100] flex items-center justify-center bg-navy-950/80 p-4 backdrop-blur-sm">
+              <div className="max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-2xl border border-white/10 bg-navy-900 p-6 shadow-2xl">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <h2 className="text-lg font-bold text-white">Manage Resources</h2>
+                    <p className="text-xs text-gray-400">{managingResourcesFor.title}</p>
+                  </div>
+                  <button onClick={() => setManagingResourcesFor(null)} className="text-gray-400 hover:text-white">
+                    <X className="h-5 w-5" />
+                  </button>
+                </div>
+                <div className="mt-4">
+                  <ResourceManager
+                    table="course_resources"
+                    ownerId={managingResourcesFor.id}
+                    ownerType="course"
+                    storagePrefix="resources/courses"
+                  />
+                </div>
               </div>
             </div>
           )}

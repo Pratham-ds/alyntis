@@ -44,14 +44,44 @@ export interface Project {
   created_at: string;
 }
 
+export type ResourceCategory =
+  | 'Manual' | 'Reference' | 'Datasheet' | 'Circuit Diagram'
+  | 'Worksheet' | 'Safety Guide' | 'Tutorial' | 'Other';
+
 export interface ProjectResource {
   id: string;
   project_id: string;
   title: string;
-  resource_type: 'pdf' | 'video';
-  url: string;
+  resource_type: 'pdf' | 'video' | 'link';
+  url: string | null;
   description: string | null;
   sort_order: number;
+  category: ResourceCategory | null;
+  file_path: string | null;
+  file_name: string | null;
+  file_size: number | null;
+  mime_type: string | null;
+  created_by: string | null;
+  updated_at: string | null;
+  created_at: string;
+}
+
+export interface CourseResource {
+  id: string;
+  course_id: string;
+  title: string;
+  description: string | null;
+  category: ResourceCategory | null;
+  file_path: string | null;
+  file_name: string | null;
+  file_size: number | null;
+  mime_type: string | null;
+  url: string | null;
+  resource_type: 'pdf' | 'link';
+  sort_order: number;
+  created_by: string | null;
+  created_at: string;
+  updated_at: string | null;
 }
 
 export interface Quiz {
@@ -119,4 +149,49 @@ export interface Notification {
   passed: boolean | null;
   read: boolean;
   created_at: string;
+}
+
+export type InnovationReason =
+  | 'lesson_completed'
+  | 'project_completed'
+  | 'project_evidence_submitted'
+  | 'teacher_approved_project'
+  | 'improvement_after_feedback'
+  | 'innovation_challenge_completed'
+  | 'independent_project'
+  | '3d_printing_project_completed';
+
+export interface InnovationPointsLog {
+  id: string;
+  student_id: string;
+  points: number;
+  reason: InnovationReason;
+  reference_id: string | null;
+  reference_type: string | null;
+  metadata: Record<string, unknown> | null;
+  created_at: string;
+}
+
+export interface StudentAchievement {
+  id: string;
+  student_id: string;
+  badge_key: string;
+  earned_at: string;
+}
+
+export interface StudentPointsSummary {
+  student_id: string;
+  full_name: string | null;
+  school: string | null;
+  class_level: string | null;
+  total_points: number;
+  school_rank: number;
+}
+
+export interface BadgeDefinition {
+  key: string;
+  name: string;
+  description: string;
+  icon: string;
+  color: string;
 }

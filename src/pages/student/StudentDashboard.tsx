@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { BookOpen, FolderGit2, CheckCircle2, HelpCircle, TrendingUp, ArrowRight, Award } from 'lucide-react';
+import { BookOpen, FolderGit2, CheckCircle2, HelpCircle, TrendingUp, ArrowRight, Award, Zap, Trophy } from 'lucide-react';
 import PlatformNav from '@/components/layout/PlatformNav';
 import SEO from '@/components/ui/SEO';
 import LoadingState from '@/components/ui/LoadingState';
@@ -8,6 +8,8 @@ import EmptyState from '@/components/ui/EmptyState';
 import { useAuth } from '@/context/AuthContext';
 import { supabase } from '@/lib/supabase';
 import type { Course, Project, ProjectCompletion, QuizAttempt } from '@/types';
+import Leaderboard from '@/components/student/Leaderboard';
+import AchievementBadges from '@/components/student/AchievementBadges';
 
 const studentLinks = [
   { label: 'Dashboard', to: '/dashboard' },
@@ -95,6 +97,49 @@ export default function StudentDashboard() {
                     </div>
                   </div>
                 ))}
+              </div>
+
+              {/* Innovation points summary */}
+              <div className="mt-8 grid gap-4 sm:grid-cols-3">
+                <div className="rounded-2xl border border-amber-500/20 bg-amber-500/10 p-6">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <p className="text-3xl font-bold text-white">{innovationPoints}</p>
+                      <p className="mt-1 text-sm text-gray-400">Innovation Points</p>
+                    </div>
+                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-amber-500 to-orange-500 shadow-lg">
+                      <Zap className="h-6 w-6 text-white" />
+                    </div>
+                  </div>
+                </div>
+                <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <p className="text-3xl font-bold text-white">#{myRank || '—'}</p>
+                      <p className="mt-1 text-sm text-gray-400">School Rank</p>
+                    </div>
+                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-teal-500 to-cyan-500 shadow-lg">
+                      <Trophy className="h-6 w-6 text-white" />
+                    </div>
+                  </div>
+                </div>
+                <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <p className="text-3xl font-bold text-white">{earnedBadges}</p>
+                      <p className="mt-1 text-sm text-gray-400">Badges Earned</p>
+                    </div>
+                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-purple-500 to-pink-500 shadow-lg">
+                      <Award className="h-6 w-6 text-white" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Leaderboard + Badges */}
+              <div className="mt-8 grid gap-6 lg:grid-cols-2">
+                <Leaderboard />
+                <AchievementBadges />
               </div>
 
               <div className="mt-8 grid gap-6 lg:grid-cols-2">
