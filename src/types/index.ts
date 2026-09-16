@@ -16,6 +16,7 @@ export interface Course {
   slug: string;
   description: string | null;
   image_url: string | null;
+  class_level: string | null;
   status: 'available' | 'coming_soon';
   sort_order: number;
   created_at: string;
@@ -44,9 +45,7 @@ export interface Project {
   created_at: string;
 }
 
-export type ResourceCategory =
-  | 'Manual' | 'Reference' | 'Datasheet' | 'Circuit Diagram'
-  | 'Worksheet' | 'Safety Guide' | 'Tutorial' | 'Other';
+export type ResourceCategory = 'Manual' | 'Reference' | 'Datasheet' | 'Circuit Diagram' | 'Worksheet' | 'Safety Guide' | 'Tutorial' | 'Other';
 
 export interface ProjectResource {
   id: string;
@@ -84,69 +83,9 @@ export interface CourseResource {
   updated_at: string | null;
 }
 
-export interface Quiz {
-  id: string;
-  project_id: string;
-  title: string;
-  description: string | null;
-  pass_score: number;
-}
-
-export interface QuizQuestion {
-  id: string;
-  quiz_id: string;
-  question: string;
-  option_a: string;
-  option_b: string;
-  option_c: string;
-  option_d: string;
-  correct_answer: 'a' | 'b' | 'c' | 'd';
-  sort_order: number;
-}
-
-export interface QuizAttempt {
-  id: string;
-  quiz_id: string;
-  student_id: string;
-  answers: Record<string, string> | null;
-  score: number;
-  total_questions: number;
-  passed: boolean;
-  created_at: string;
-}
-
-export interface ProjectCompletion {
-  id: string;
-  project_id: string;
-  student_id: string;
-  notes: string | null;
-  created_at: string;
-}
-
-export interface Testimonial {
-  id: string;
-  name: string;
-  role: string | null;
-  quote: string;
-  photo_url: string | null;
-  rating: number;
-  is_published: boolean;
-  sort_order: number;
-  created_at: string;
-}
-
-export interface Notification {
-  id: string;
-  type: 'project_completion' | 'quiz_completion' | 'quiz_attempt';
-  student_id: string | null;
-  student_name: string | null;
-  project_id: string | null;
-  project_title: string | null;
-  quiz_id: string | null;
-  quiz_title: string | null;
-  score: number | null;
-  total_questions: number | null;
-  passed: boolean | null;
-  read: boolean;
-  created_at: string;
-}
+export interface Quiz { id: string; project_id: string; title: string; description: string | null; pass_score: number; }
+export interface QuizQuestion { id: string; quiz_id: string; question: string; option_a: string; option_b: string; option_c: string; option_d: string; correct_answer: 'a' | 'b' | 'c' | 'd'; sort_order: number; }
+export interface QuizAttempt { id: string; quiz_id: string; student_id: string; answers: Record<string, string> | null; score: number; total_questions: number; passed: boolean; created_at: string; }
+export interface ProjectCompletion { id: string; project_id: string; student_id: string; notes: string | null; created_at: string; }
+export interface Testimonial { id: string; name: string; role: string | null; quote: string; photo_url: string | null; rating: number; is_published: boolean; sort_order: number; created_at: string; }
+export interface Notification { id: string; type: 'project_completion' | 'quiz_completion' | 'quiz_attempt'; student_id: string | null; student_name: string | null; project_id: string | null; project_title: string | null; quiz_id: string | null; quiz_title: string | null; score: number | null; total_questions: number | null; passed: boolean | null; read: boolean; created_at: string; }
