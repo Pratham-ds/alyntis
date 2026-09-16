@@ -20,20 +20,15 @@ export default function ClassWiseLearning() {
                 <span className="text-gradient">WITH THE STUDENT.</span>
               </>
             }
-            subtitle="Alyntis organizes projects and learning experiences according to student level — so complexity increases as understanding deepens."
+            subtitle="Alyntis structures technology learning by age, capability and complexity — from foundational making to advanced innovation across robotics, AI, IoT, drones and 3D printing."
           />
         </Reveal>
 
         <div className="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {classLevels.map((cls, i) => (
             <Reveal key={cls.level} delay={i * 80}>
-              <div className="group relative h-full overflow-hidden rounded-2xl border border-gray-100 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-navy-900/10">
-                <div
-                  className="absolute right-0 top-0 h-24 w-24 rounded-bl-full opacity-5 transition-opacity group-hover:opacity-10"
-                  style={{
-                    background: `linear-gradient(135deg, #14b8a6, #06b6d4)`,
-                  }}
-                />
+              <div className="group relative h-full overflow-hidden rounded-2xl border border-gray-100 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-teal-100 hover:shadow-xl hover:shadow-navy-900/10">
+                <div className="absolute right-0 top-0 h-24 w-24 rounded-bl-full bg-gradient-to-br from-teal-500 to-cyan-500 opacity-5 transition-opacity group-hover:opacity-10" />
                 <div className="flex items-center justify-between">
                   <span className="text-sm font-bold uppercase tracking-widest text-teal-600">
                     {cls.level}
@@ -58,8 +53,8 @@ export default function ClassWiseLearning() {
 
         <Reveal delay={200}>
           <div className="mt-12 text-center">
-            <Button to="/login" variant="outline" size="lg">
-              Access the Project Library
+            <Button to="/programs" variant="outline" size="lg">
+              Explore Learning Pathways
               <ArrowRight className="h-5 w-5" />
             </Button>
           </div>
