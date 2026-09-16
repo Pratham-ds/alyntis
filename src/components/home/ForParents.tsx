@@ -2,10 +2,10 @@ import { Check, Eye, TrendingUp } from 'lucide-react';
 import Reveal from '@/components/ui/Reveal';
 
 const parentFeatures = [
-  { icon: Eye, title: 'Projects Completed', desc: 'See exactly what your child has built.' },
-  { icon: TrendingUp, title: 'Skills Developed', desc: 'Track the real skills your child is gaining.' },
-  { icon: Check, title: 'Progress & Achievements', desc: 'Follow growth over time, not just marks.' },
-  { icon: Eye, title: 'Innovation Portfolio', desc: 'View a portfolio of everything created.' },
+  { icon: Eye, title: 'Learning Evidence', desc: 'See the work students create and the thinking behind it.' },
+  { icon: TrendingUp, title: 'Skills Developed', desc: 'Follow growth in practical technology and problem-solving skills.' },
+  { icon: Check, title: 'Progress & Achievements', desc: 'Understand development over time beyond academic marks.' },
+  { icon: Eye, title: 'Innovation Portfolio', desc: 'Keep meaningful evidence of learning, making and iteration.' },
 ];
 
 export default function ForParents() {
@@ -14,18 +14,15 @@ export default function ForParents() {
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <Reveal>
           <div className="mx-auto mb-16 max-w-3xl text-center">
-            <p className="mb-4 text-sm font-bold uppercase tracking-widest text-teal-600">
-              For Parents
-            </p>
+            <p className="mb-4 text-sm font-bold uppercase tracking-widest text-teal-600">For Families</p>
             <h2 className="text-3xl font-bold text-navy-900 sm:text-4xl lg:text-5xl">
-              SEE WHAT YOUR CHILD
+              MAKE LEARNING
               <br />
-              <span className="text-gradient">CAN BUILD.</span>
+              <span className="text-gradient">VISIBLE.</span>
             </h2>
             <p className="mt-5 text-lg text-gray-600">
-              Alyntis focuses on capability and growth — not just marks. Parents can eventually see
-              projects completed, skills developed, progress, achievements, innovation portfolio and
-              certificates.
+              Alyntis is built around visible evidence of learning — helping families understand
+              the skills, work and progress developed through hands-on technology education.
             </p>
           </div>
         </Reveal>
@@ -43,12 +40,6 @@ export default function ForParents() {
             </Reveal>
           ))}
         </div>
-
-        <Reveal delay={200}>
-          <p className="mt-8 text-center text-sm text-gray-500">
-            Parent access is currently in development.
-          </p>
-        </Reveal>
       </div>
     </section>
   );
