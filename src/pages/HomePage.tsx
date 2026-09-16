@@ -1,7 +1,6 @@
 import SEO from '@/components/ui/SEO';
 import Hero from '@/components/home/Hero';
 import Mission from '@/components/home/Mission';
-import Philosophy from '@/components/home/Philosophy';
 import TechnologyGrid from '@/components/home/TechnologyGrid';
 import ClassWiseLearning from '@/components/home/ClassWiseLearning';
 import HowItWorks from '@/components/home/HowItWorks';
@@ -10,7 +9,6 @@ import Platform from '@/components/home/Platform';
 import StudentExperience from '@/components/home/StudentExperience';
 import InnovationPortfolio from '@/components/home/InnovationPortfolio';
 import Challenges from '@/components/home/Challenges';
-import AskAlyntis from '@/components/home/AskAlyntis';
 import ForParents from '@/components/home/ForParents';
 import WhyAlyntis from '@/components/home/WhyAlyntis';
 import Testimonials from '@/components/home/Testimonials';
@@ -21,13 +19,12 @@ export default function HomePage() {
   return (
     <>
       <SEO
-        title="Alyntis — From Consumers to Makers | Preparing Minds to Build the Future"
-        description="Alyntis is a mission-driven technology and learning platform preparing the next generation to become creators, builders and innovators. Robotics, AI, IoT, electronics, drones and more."
+        title="Alyntis — From Consumers to Makers | Technology Learning for Schools"
+        description="Alyntis helps schools build structured, hands-on technology learning through robotics, AI, IoT, embedded systems, electronics, automation, drones, coding and 3D printing."
         ogImage="https://images.pexels.com/photos/7869048/pexels-photo-7869048.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
       />
       <Hero />
       <Mission />
-      <Philosophy />
       <TechnologyGrid />
       <ClassWiseLearning />
       <HowItWorks />
@@ -36,7 +33,6 @@ export default function HomePage() {
       <StudentExperience />
       <InnovationPortfolio />
       <Challenges />
-      <AskAlyntis />
       <ForParents />
       <WhyAlyntis />
       <Testimonials />
