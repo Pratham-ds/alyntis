@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, Mail } from 'lucide-react';
 import Logo from '@/components/ui/Logo';
 
 const footerNav = [
@@ -32,7 +32,7 @@ export default function Footer() {
               and problem-solvers.
             </p>
             <div className="mt-6 flex flex-wrap gap-2">
-              {['Robotics', 'AI', 'IoT', 'Electronics', 'Drones'].map((tag) => (
+              {['Robotics', 'AI', 'IoT', 'Electronics', 'Drones', '3D Printing'].map((tag) => (
                 <span
                   key={tag}
                   className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-gray-300"
@@ -100,7 +100,19 @@ export default function Footer() {
                 </Link>
               </li>
             </ul>
-            <div className="mt-6 space-y-2">
+            <div className="mt-6 rounded-xl border border-white/10 bg-white/5 p-4">
+              <p className="text-xs font-semibold uppercase tracking-wider text-gray-500">
+                Business &amp; General Enquiries
+              </p>
+              <a
+                href="mailto:info@alyntis.in"
+                className="mt-2 inline-flex items-center gap-2 text-sm font-semibold text-white transition-colors hover:text-teal-400"
+              >
+                <Mail className="h-4 w-4 text-teal-400" />
+                info@alyntis.in
+              </a>
+            </div>
+            <div className="mt-4 space-y-2">
               <p className="text-xs text-gray-500">Privacy Policy</p>
               <p className="text-xs text-gray-500">Terms of Use</p>
             </div>
