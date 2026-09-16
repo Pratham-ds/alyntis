@@ -3,7 +3,6 @@ import Hero from '@/components/home/Hero';
 import Mission from '@/components/home/Mission';
 import Philosophy from '@/components/home/Philosophy';
 import TechnologyGrid from '@/components/home/TechnologyGrid';
-import ProjectPreview from '@/components/home/ProjectPreview';
 import ClassWiseLearning from '@/components/home/ClassWiseLearning';
 import HowItWorks from '@/components/home/HowItWorks';
 import ForSchools from '@/components/home/ForSchools';
@@ -30,7 +29,6 @@ export default function HomePage() {
       <Mission />
       <Philosophy />
       <TechnologyGrid />
-      <ProjectPreview />
       <ClassWiseLearning />
       <HowItWorks />
       <ForSchools />
