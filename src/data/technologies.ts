@@ -7,6 +7,7 @@ import {
   Settings2,
   Plane,
   Code2,
+  Printer,
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
@@ -97,6 +98,16 @@ export const technologies: Technology[] = [
     image:
       'https://images.pexels.com/photos/5530437/pexels-photo-5530437.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
     features: ['Programming', 'Algorithms', 'Logical Thinking', 'Problem Solving'],
+  },
+  {
+    slug: '3d-printing',
+    name: '3D Printing',
+    description:
+      'Turn digital designs into physical prototypes and learn modern additive manufacturing through hands-on making.',
+    icon: Printer,
+    image:
+      'https://images.pexels.com/photos/8294607/pexels-photo-8294607.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+    features: ['3D Design & Modeling', 'Slicing & Print Setup', 'Rapid Prototyping', 'Additive Manufacturing'],
   },
 ];
 
