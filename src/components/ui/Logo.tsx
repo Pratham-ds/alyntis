@@ -11,7 +11,7 @@ export default function Logo({ className = '' }: LogoProps) {
       <img
         src={logoImage}
         alt="Alyntis"
-        className="h-11 w-11 object-contain"
+        className="h-12 w-auto max-w-[180px] object-contain"
       />
     </div>
   );
