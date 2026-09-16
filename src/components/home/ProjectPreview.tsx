@@ -4,8 +4,6 @@ import SectionHeader from '@/components/ui/SectionHeader';
 import Button from '@/components/ui/Button';
 
 const previewProjects = [
-  'Line Follower Robot',
-  'Obstacle Avoiding Robot',
   'Smart Dustbin',
   'Smart Irrigation System',
   'IoT Weather Station',
@@ -32,7 +30,7 @@ export default function ProjectPreview() {
           />
         </Reveal>
 
-        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {previewProjects.map((name, i) => (
             <Reveal key={name} delay={i * 50}>
               <div className="flex items-center gap-3 rounded-xl border border-gray-100 bg-white p-4 shadow-sm">
