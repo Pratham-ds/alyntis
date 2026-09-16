@@ -1,17 +1,18 @@
+import { ArrowUpRight, Brain, Cpu, Plane, Printer } from 'lucide-react';
 import Reveal from '@/components/ui/Reveal';
 
-const portfolioItems = [
-  { label: 'Projects Built', value: '12', color: 'from-teal-500 to-cyan-500' },
-  { label: 'Skills Developed', value: '8', color: 'from-navy-700 to-navy-900' },
-  { label: 'Challenges Completed', value: '3', color: 'from-teal-500 to-cyan-500' },
-  { label: 'Certificates Earned', value: '5', color: 'from-navy-700 to-navy-900' },
+const capabilities = [
+  { icon: Brain, label: 'AI & Intelligent Systems' },
+  { icon: Cpu, label: 'Embedded & Connected Devices' },
+  { icon: Plane, label: 'Drone & Autonomous Technology' },
+  { icon: Printer, label: '3D Design & Prototyping' },
 ];
 
 export default function InnovationPortfolio() {
   return (
     <section className="relative overflow-hidden bg-navy-950 py-20 lg:py-32">
       <div className="absolute inset-0 bg-grid-dark" />
-      <div className="absolute top-1/2 right-0 h-96 w-96 -translate-y-1/2 rounded-full bg-cyan-500/10 blur-[120px]" />
+      <div className="absolute right-0 top-1/2 h-96 w-96 -translate-y-1/2 rounded-full bg-cyan-500/10 blur-[120px]" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
@@ -21,62 +22,64 @@ export default function InnovationPortfolio() {
                 Innovation Portfolio
               </p>
               <h2 className="text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-5xl">
-                DON'T JUST SHOW YOUR MARKS.
+                TURN LEARNING INTO
                 <br />
-                <span className="text-gradient">SHOW WHAT YOU CAN BUILD.</span>
+                <span className="text-gradient">EVIDENCE OF CAPABILITY.</span>
               </h2>
               <p className="mt-6 max-w-xl text-lg leading-relaxed text-gray-300">
-                The Alyntis Innovation Portfolio lets students showcase what they've actually built —
-                projects, problems solved, technologies used, skills developed, improvements made,
-                challenges completed, achievements and certificates.
+                Students document what they learn, build and improve so their progress becomes a
+                meaningful record of skills, experimentation and problem-solving.
               </p>
               <p className="mt-4 max-w-xl text-base leading-relaxed text-gray-400">
-                Future opportunities will increasingly value what people can create and solve — not
-                just what they can remember.
+                The portfolio is designed to show the thinking behind the work — not just the final
+                outcome.
               </p>
+
+              <div className="mt-8 grid gap-3 sm:grid-cols-2">
+                {capabilities.map((item) => (
+                  <div key={item.label} className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 p-3">
+                    <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-teal-500/10">
+                      <item.icon className="h-4 w-4 text-teal-400" />
+                    </div>
+                    <span className="text-sm font-medium text-gray-200">{item.label}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </Reveal>
 
           <Reveal delay={200}>
-            <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
-              <div className="mb-5 flex items-center justify-between">
+            <div className="rounded-3xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm sm:p-6">
+              <div className="flex items-center justify-between border-b border-white/10 pb-5">
                 <div>
-                  <p className="text-xs text-gray-400">Innovation Portfolio</p>
-                  <p className="text-lg font-bold text-white">Student Maker Profile</p>
+                  <p className="text-xs text-gray-400">Student Maker Profile</p>
+                  <p className="mt-1 text-lg font-bold text-white">Innovation Portfolio</p>
                 </div>
-                <span className="rounded-full bg-teal-500/20 px-3 py-1 text-xs font-semibold text-teal-400">
-                  Active
+                <span className="rounded-full bg-teal-500/15 px-3 py-1 text-xs font-semibold text-teal-400">
+                  Growing
                 </span>
               </div>
 
-              <div className="grid grid-cols-2 gap-3">
-                {portfolioItems.map((item) => (
-                  <div
-                    key={item.label}
-                    className="rounded-xl border border-white/10 bg-white/5 p-4"
-                  >
-                    <p className={`text-3xl font-bold bg-gradient-to-r ${item.color} bg-clip-text text-transparent`}>
-                      {item.value}
-                    </p>
-                    <p className="mt-1 text-xs text-gray-400">{item.label}</p>
+              <div className="mt-5 space-y-3">
+                {[
+                  ['Skills', 'Technology · Problem Solving · Design'],
+                  ['Build Evidence', 'Images · Resources · Submissions'],
+                  ['Iteration', 'Feedback · Testing · Improvements'],
+                  ['Achievements', 'Challenges · Certificates · Milestones'],
+                ].map(([label, value]) => (
+                  <div key={label} className="rounded-xl border border-white/10 bg-white/5 p-4">
+                    <div className="flex items-center justify-between gap-4">
+                      <p className="text-sm font-semibold text-white">{label}</p>
+                      <ArrowUpRight className="h-4 w-4 text-teal-400" />
+                    </div>
+                    <p className="mt-1 text-xs leading-relaxed text-gray-400">{value}</p>
                   </div>
                 ))}
               </div>
 
-              <div className="mt-4 rounded-xl border border-white/10 bg-white/5 p-4">
-                <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-teal-400">
-                  Recent Projects
-                </p>
-                <div className="space-y-2">
-                  {['Line Follower Robot', 'Smart Dustbin', 'IoT Weather Station'].map((proj) => (
-                    <div key={proj} className="flex items-center justify-between">
-                      <span className="text-sm text-gray-300">{proj}</span>
-                      <span className="rounded-full bg-teal-500/10 px-2 py-0.5 text-xs text-teal-400">
-                        Completed
-                      </span>
-                    </div>
-                  ))}
-                </div>
+              <div className="mt-4 rounded-xl border border-teal-500/20 bg-teal-500/5 p-4">
+                <p className="text-xs font-semibold uppercase tracking-widest text-teal-400">The goal</p>
+                <p className="mt-1 text-sm font-medium text-gray-200">Make learning visible.</p>
               </div>
             </div>
           </Reveal>
