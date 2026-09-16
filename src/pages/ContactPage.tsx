@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Send, CheckCircle2, AlertCircle, Loader2 } from 'lucide-react';
+import { Send, CheckCircle2, AlertCircle, Loader2, Mail } from 'lucide-react';
 import SEO from '@/components/ui/SEO';
 import Reveal from '@/components/ui/Reveal';
 import Button from '@/components/ui/Button';
@@ -183,6 +183,27 @@ export default function ContactPage() {
               </form>
             </Reveal>
           )}
+
+          {/* Direct business contact */}
+          <Reveal delay={100}>
+            <div className="mt-8 flex flex-col items-center justify-between gap-4 rounded-2xl border border-gray-200 bg-white p-6 text-center shadow-sm sm:flex-row sm:text-left">
+              <div>
+                <p className="text-xs font-bold uppercase tracking-widest text-teal-600">
+                  Business &amp; General Enquiries
+                </p>
+                <p className="mt-1 text-sm text-gray-600">
+                  Prefer email? Reach the Alyntis team directly.
+                </p>
+              </div>
+              <a
+                href="mailto:info@alyntis.in"
+                className="inline-flex items-center gap-2 rounded-xl border border-teal-200 bg-teal-50 px-4 py-2.5 text-sm font-semibold text-teal-800 transition-colors hover:border-teal-300 hover:bg-teal-100"
+              >
+                <Mail className="h-4 w-4" />
+                info@alyntis.in
+              </a>
+            </div>
+          </Reveal>
 
           {/* School demo CTA */}
           <Reveal delay={200}>
