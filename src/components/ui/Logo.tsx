@@ -10,8 +10,8 @@ export default function Logo({ className = '' }: LogoProps) {
     <div className={`flex items-center ${className}`}>
       <img
         src={logoImage}
-        alt="Alyntis"
-        className="h-11 w-11 object-contain"
+        alt="Alyntis — From Consumers to Makers"
+        className="h-12 w-auto max-w-[180px] object-contain"
       />
     </div>
   );
