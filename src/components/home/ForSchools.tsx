@@ -1,19 +1,19 @@
-import { Check, ArrowRight, HardHat } from 'lucide-react';
+import { ArrowRight, Check, HardHat } from 'lucide-react';
 import Reveal from '@/components/ui/Reveal';
 import Button from '@/components/ui/Button';
 
 const benefits = [
   'Structured project-based learning',
-  'Class-wise project library',
+  'Class-wise learning pathways',
   'Robotics and electronics',
   'IoT and smart systems',
   'AI foundations',
   'Embedded systems',
   'Drone technology',
+  '3D design and printing',
   'Teacher support and training',
   'Student progress tracking',
   'Project submissions',
-  'Innovation portfolios',
   'Real-world challenges',
 ];
 
@@ -27,17 +27,15 @@ export default function ForSchools() {
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
           <Reveal>
             <div>
-              <p className="mb-4 text-sm font-bold uppercase tracking-widest text-teal-400">
-                For Schools
-              </p>
+              <p className="mb-4 text-sm font-bold uppercase tracking-widest text-teal-400">For Schools</p>
               <h2 className="text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-5xl">
-                BRING THE MAKER MINDSET
+                BUILD A STRONGER
                 <br />
-                <span className="text-gradient">TO YOUR SCHOOL.</span>
+                <span className="text-gradient">MAKER CULTURE.</span>
               </h2>
               <p className="mt-6 max-w-xl text-lg leading-relaxed text-gray-300">
-                Alyntis helps schools create structured, technology-driven learning experiences
-                where students learn through building, experimentation and innovation.
+                Alyntis works with schools to create structured, technology-driven learning
+                experiences where students learn by designing, building, testing and improving.
               </p>
 
               <div className="mt-8 grid gap-3 sm:grid-cols-2">
@@ -82,13 +80,11 @@ export default function ForSchools() {
                     <HardHat className="h-5 w-5 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-sm font-bold text-white">
-                      Top-Class Engineers On-Site
-                    </h3>
+                    <h3 className="text-sm font-bold text-white">Hands-On Support for Schools</h3>
                     <p className="mt-1 text-xs leading-relaxed text-gray-300">
-                      Alyntis appoints qualified, top-class engineers to your school based on your
-                      specific needs — for hands-on teacher training and direct student guidance
-                      during build sessions.
+                      Alyntis can support schools with implementation, teacher enablement and direct
+                      student guidance — helping technology learning become a sustained part of the
+                      school experience.
                     </p>
                   </div>
                 </div>
