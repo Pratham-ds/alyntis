@@ -15,6 +15,7 @@ import LoginPage from '@/pages/LoginPage';
 import AdminDashboard from '@/pages/admin/AdminDashboard';
 import AdminCourses from '@/pages/admin/AdminCourses';
 import AdminProjects from '@/pages/admin/AdminProjects';
+import AdminQuizzes from '@/pages/admin/AdminQuizzes';
 import AdminNotifications from '@/pages/admin/AdminNotifications';
 import AdminUsers from '@/pages/admin/AdminUsers';
 import AdminTestimonials from '@/pages/admin/AdminTestimonials';
@@ -29,7 +30,6 @@ function App() {
       <BrowserRouter>
         <Layout>
           <Routes>
-            {/* Public routes */}
             <Route path="/" element={<HomePage />} />
             <Route path="/mission" element={<MissionPage />} />
             <Route path="/programs" element={<ProgramsPage />} />
@@ -41,15 +41,14 @@ function App() {
             <Route path="/request-demo" element={<RequestDemoPage />} />
             <Route path="/login" element={<LoginPage />} />
 
-            {/* Admin routes */}
             <Route path="/admin" element={<ProtectedRoute role="admin"><AdminDashboard /></ProtectedRoute>} />
             <Route path="/admin/courses" element={<ProtectedRoute role="admin"><AdminCourses /></ProtectedRoute>} />
             <Route path="/admin/projects" element={<ProtectedRoute role="admin"><AdminProjects /></ProtectedRoute>} />
+            <Route path="/admin/quizzes" element={<ProtectedRoute role="admin"><AdminQuizzes /></ProtectedRoute>} />
             <Route path="/admin/notifications" element={<ProtectedRoute role="admin"><AdminNotifications /></ProtectedRoute>} />
             <Route path="/admin/users" element={<ProtectedRoute role="admin"><AdminUsers /></ProtectedRoute>} />
             <Route path="/admin/testimonials" element={<ProtectedRoute role="admin"><AdminTestimonials /></ProtectedRoute>} />
 
-            {/* Student routes */}
             <Route path="/dashboard" element={<ProtectedRoute><StudentDashboard /></ProtectedRoute>} />
             <Route path="/dashboard/courses" element={<ProtectedRoute><StudentCourses /></ProtectedRoute>} />
             <Route path="/dashboard/projects" element={<ProtectedRoute><StudentProjects /></ProtectedRoute>} />
