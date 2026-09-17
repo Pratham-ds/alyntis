@@ -6,6 +6,7 @@ import HowItWorks from '@/components/home/HowItWorks';
 import ForSchools from '@/components/home/ForSchools';
 import Platform from '@/components/home/Platform';
 import CTASection from '@/components/home/CTASection';
+import HomepageTrustBar from '@/components/home/HomepageTrustBar';
 
 export default function HomePage() {
   return (
@@ -16,6 +17,7 @@ export default function HomePage() {
         ogImage="https://images.pexels.com/photos/7869048/pexels-photo-7869048.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
       />
       <Hero />
+      <HomepageTrustBar />
       <Mission />
       <TechnologyGrid />
       <HowItWorks />
