@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { BookOpen, ArrowRight, Loader2 } from 'lucide-react';
+import { BookOpen, ArrowRight } from 'lucide-react';
 import PlatformNav from '@/components/layout/PlatformNav';
 import SEO from '@/components/ui/SEO';
 import LoadingState from '@/components/ui/LoadingState';
 import EmptyState from '@/components/ui/EmptyState';
 import { supabase } from '@/lib/supabase';
-import type { Course, Project } from '@/types';
+import type { Course } from '@/types';
 
 const studentLinks = [
   { label: 'Dashboard', to: '/dashboard' },
@@ -63,7 +63,7 @@ export default function StudentCourses() {
               {courses.map((course) => (
                 <Link
                   key={course.id}
-                  to="/dashboard/projects"
+                  to={`/dashboard/projects?class=${encodeURIComponent(course.class_level || '')}`}
                   className="group overflow-hidden rounded-2xl border border-white/10 bg-white/5 transition-all hover:border-teal-500/30 hover:bg-white/10"
                 >
                   {course.image_url && (
