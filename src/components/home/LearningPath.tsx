@@ -1,4 +1,4 @@
-import { ArrowRight, Bot, BrainCircuit, Code2, Cpu, Plane, Radio } from 'lucide-react';
+import { ArrowRight, Bot, BrainCircuit, Code2, Plane, Radio } from 'lucide-react';
 import Reveal from '@/components/ui/Reveal';
 import Button from '@/components/ui/Button';
 
@@ -21,23 +21,16 @@ export default function LearningPath() {
               <h2 className="text-3xl font-bold leading-tight text-navy-900 sm:text-4xl">A clear technology journey, <span className="text-gradient">class by class.</span></h2>
               <p className="mt-4 text-base leading-relaxed text-gray-600 sm:text-lg">Learning progresses from foundational concepts to advanced technology, with projects and quizzes reinforcing every stage.</p>
             </div>
-            <Button to="/programs" variant="outline" size="md">
-              View Programs <ArrowRight className="h-4 w-4" />
-            </Button>
+            <Button to="/programs" variant="outline" size="md">View Programs <ArrowRight className="h-4 w-4" /></Button>
           </div>
         </Reveal>
-
         <div className="mt-10 grid gap-4 md:grid-cols-5">
           {levels.map((item, index) => (
             <Reveal key={item.level} delay={index * 60}>
               <div className="relative h-full rounded-2xl border border-gray-100 bg-white p-5 shadow-sm">
-                <div className="flex items-center justify-between">
-                  <span className="text-xs font-bold uppercase tracking-wider text-teal-600">{item.level}</span>
-                  <item.icon className="h-5 w-5 text-navy-700" />
-                </div>
+                <div className="flex items-center justify-between"><span className="text-xs font-bold uppercase tracking-wider text-teal-600">{item.level}</span><item.icon className="h-5 w-5 text-navy-700" /></div>
                 <h3 className="mt-5 text-base font-bold text-navy-900">{item.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-gray-600">{item.desc}</p>
-                {index < levels.length - 1 && <div className="mt-5 hidden h-px w-8 bg-teal-200 md:block" />}
               </div>
             </Reveal>
           ))}
