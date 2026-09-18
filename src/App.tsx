@@ -4,6 +4,7 @@ import Layout from '@/components/layout/Layout';
 import ProtectedRoute from '@/components/auth/ProtectedRoute';
 import HomePage from '@/pages/HomePage';
 import MissionPage from '@/pages/MissionPage';
+import SpacePage from '@/pages/SpacePage';
 import ProgramsPage from '@/pages/ProgramsPage';
 import ProjectsPage from '@/pages/ProjectsPage';
 import ProjectDetailPage from '@/pages/ProjectDetailPage';
@@ -32,6 +33,7 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/mission" element={<MissionPage />} />
+            <Route path="/space" element={<SpacePage />} />
             <Route path="/programs" element={<ProgramsPage />} />
             <Route path="/projects" element={<ProjectsPage />} />
             <Route path="/projects/:slug" element={<ProjectDetailPage />} />
