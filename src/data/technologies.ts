@@ -8,6 +8,7 @@ import {
   Plane,
   Code2,
   Printer,
+  Rocket,
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
@@ -108,6 +109,16 @@ export const technologies: Technology[] = [
     image:
       'https://images.pexels.com/photos/8294607/pexels-photo-8294607.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
     features: ['3D Design & Modeling', 'Slicing & Print Setup', 'Rapid Prototyping', 'Additive Manufacturing'],
+  },
+  {
+    slug: 'space-technology',
+    name: 'Space Technology',
+    description:
+      'Explore rockets, satellites, space robotics, telemetry and the engineering systems used to explore beyond Earth.',
+    icon: Rocket,
+    image:
+      'https://images.pexels.com/photos/23769/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=650&w=940',
+    features: ['Rocket Engineering', 'Satellite Systems', 'Space Robotics', 'Telemetry & Communication'],
   },
 ];
 
