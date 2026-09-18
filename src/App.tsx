@@ -24,6 +24,7 @@ import StudentDashboard from '@/pages/student/StudentDashboard';
 import StudentCourses from '@/pages/student/StudentCourses';
 import StudentProjects from '@/pages/student/StudentProjects';
 import StudentProjectDetail from '@/pages/student/StudentProjectDetail';
+import SpacePassport from '@/pages/student/SpacePassport';
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/mission" element={<MissionPage />} />
             <Route path="/space" element={<SpaceExperiencePage />} />
+            <Route path="/space/passport" element={<ProtectedRoute><SpacePassport /></ProtectedRoute>} />
             <Route path="/programs" element={<ProgramsPage />} />
             <Route path="/projects" element={<ProjectsPage />} />
             <Route path="/projects/:slug" element={<ProjectDetailPage />} />

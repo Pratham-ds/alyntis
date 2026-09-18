@@ -1,8 +1,9 @@
 import SpacePage from './SpacePage';
 import MarsMission from '@/components/space/MarsMission';
 import SpaceLearning from '@/components/space/SpaceLearning';
+import SpaceProgressHub from '@/components/space/SpaceProgressHub';
 
-/** Phase 4 extends the existing Space journey with structured learning content. */
+/** Space experience composed from the cinematic journey, Mars mission, learning program and student progression layers. */
 export default function SpaceExperiencePage() {
-  return <><SpacePage /><MarsMission /><SpaceLearning /></>;
+  return <><SpacePage /><MarsMission /><SpaceLearning /><SpaceProgressHub /></>;
 }
