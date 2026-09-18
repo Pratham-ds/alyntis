@@ -4,7 +4,7 @@ import Layout from '@/components/layout/Layout';
 import ProtectedRoute from '@/components/auth/ProtectedRoute';
 import HomePage from '@/pages/HomePage';
 import MissionPage from '@/pages/MissionPage';
-import SpacePage from '@/pages/SpacePage';
+import SpaceExperiencePage from '@/pages/SpaceExperiencePage';
 import ProgramsPage from '@/pages/ProgramsPage';
 import ProjectsPage from '@/pages/ProjectsPage';
 import ProjectDetailPage from '@/pages/ProjectDetailPage';
@@ -33,7 +33,7 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/mission" element={<MissionPage />} />
-            <Route path="/space" element={<SpacePage />} />
+            <Route path="/space" element={<SpaceExperiencePage />} />
             <Route path="/programs" element={<ProgramsPage />} />
             <Route path="/projects" element={<ProjectsPage />} />
             <Route path="/projects/:slug" element={<ProjectDetailPage />} />
@@ -42,7 +42,6 @@ function App() {
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/request-demo" element={<RequestDemoPage />} />
             <Route path="/login" element={<LoginPage />} />
-
             <Route path="/admin" element={<ProtectedRoute role="admin"><AdminDashboard /></ProtectedRoute>} />
             <Route path="/admin/courses" element={<ProtectedRoute role="admin"><AdminCourses /></ProtectedRoute>} />
             <Route path="/admin/projects" element={<ProtectedRoute role="admin"><AdminProjects /></ProtectedRoute>} />
@@ -50,7 +49,6 @@ function App() {
             <Route path="/admin/notifications" element={<ProtectedRoute role="admin"><AdminNotifications /></ProtectedRoute>} />
             <Route path="/admin/users" element={<ProtectedRoute role="admin"><AdminUsers /></ProtectedRoute>} />
             <Route path="/admin/testimonials" element={<ProtectedRoute role="admin"><AdminTestimonials /></ProtectedRoute>} />
-
             <Route path="/dashboard" element={<ProtectedRoute><StudentDashboard /></ProtectedRoute>} />
             <Route path="/dashboard/courses" element={<ProtectedRoute><StudentCourses /></ProtectedRoute>} />
             <Route path="/dashboard/projects" element={<ProtectedRoute><StudentProjects /></ProtectedRoute>} />
