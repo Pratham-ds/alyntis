@@ -13,8 +13,8 @@ export default function HomePage() {
   return (
     <>
       <SEO
-        title="Alyntis | STEM, Robotics, AI & Future-Ready Learning"
-        description="Alyntis helps schools prepare students for the future through practical learning in Robotics, Artificial Intelligence, Machine Learning, IoT, Embedded Systems, Drone Technology and emerging technologies."
+        title="Alyntis | STEM, Robotics, AI, ML, IoT & Space Technology"
+        description="Alyntis helps schools prepare students for the future through hands-on learning in STEM, Robotics, Artificial Intelligence, Machine Learning, IoT, Embedded Systems, Drone Technology and Space Technology."
         ogImage="https://images.pexels.com/photos/7869048/pexels-photo-7869048.jpeg?auto=compress&cs=tinysrgb&w=1200"
       />
       <Hero />
