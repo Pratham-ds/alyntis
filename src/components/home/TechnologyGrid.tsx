@@ -6,51 +6,47 @@ import { technologies } from '@/data/technologies';
 
 export default function TechnologyGrid() {
   return (
-    <section className="relative overflow-hidden bg-white py-20 lg:py-32">
-      <div className="absolute inset-0 bg-grid-pattern opacity-40" />
-
+    <section className="relative overflow-hidden bg-slate-50 py-20 lg:py-28">
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <Reveal>
           <SectionHeader
-            eyebrow="What We Build With"
+            eyebrow="The technology students can explore"
             title={
               <>
-                BUILD WITH THE TECHNOLOGIES
+                FROM FIRST CIRCUIT TO
                 <br />
-                <span className="text-gradient">OF TOMORROW.</span>
+                <span className="text-teal-600">SPACE TECHNOLOGY.</span>
               </>
             }
-            subtitle="From robotics to artificial intelligence, Alyntis gives students hands-on experience with the technologies shaping the future."
+            subtitle="Alyntis brings together the physical and digital sides of technology education — students can code, wire, prototype, fly, analyse and build."
           />
         </Reveal>
 
-        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-14 grid gap-px overflow-hidden border border-gray-200 bg-gray-200 sm:grid-cols-2 lg:grid-cols-5">
           {technologies.map((tech, i) => (
-            <Reveal key={tech.slug} delay={i * 60}>
+            <Reveal key={tech.slug} delay={i * 40}>
               <Link
                 to="/programs"
-                className="group flex h-full flex-col overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-navy-900/10"
+                className="group flex h-full min-h-[310px] flex-col bg-white transition-colors hover:bg-navy-950"
               >
-                <div className="relative h-40 overflow-hidden">
+                <div className="relative h-32 overflow-hidden">
                   <img
                     src={tech.image}
                     alt={tech.name}
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="h-full w-full object-cover grayscale-[15%] transition duration-500 group-hover:scale-105 group-hover:grayscale-0"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-navy-950/80 to-transparent" />
-                  <div className="absolute bottom-3 left-3 flex h-10 w-10 items-center justify-center rounded-xl bg-white/90 backdrop-blur-sm">
-                    <tech.icon className="h-5 w-5 text-navy-900" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-navy-950/60 to-transparent" />
+                  <div className="absolute bottom-3 left-3 flex h-9 w-9 items-center justify-center bg-white text-navy-900">
+                    <tech.icon className="h-4 w-4" />
                   </div>
                 </div>
                 <div className="flex flex-1 flex-col p-5">
-                  <h3 className="text-lg font-bold text-navy-900">{tech.name}</h3>
-                  <p className="mt-2 flex-1 text-sm leading-relaxed text-gray-600">
-                    {tech.description}
-                  </p>
-                  <div className="mt-4 flex items-center gap-1 text-sm font-semibold text-teal-600 opacity-0 transition-opacity group-hover:opacity-100">
-                    Learn more
-                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-gray-400 group-hover:text-teal-300">0{i + 1}</p>
+                  <h3 className="mt-2 text-lg font-bold text-navy-900 group-hover:text-white">{tech.name}</h3>
+                  <p className="mt-2 flex-1 text-sm leading-6 text-gray-600 group-hover:text-gray-300">{tech.description}</p>
+                  <div className="mt-5 flex items-center gap-2 text-sm font-semibold text-teal-600 group-hover:text-teal-300">
+                    Explore <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </div>
                 </div>
               </Link>
