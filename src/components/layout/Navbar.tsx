@@ -10,7 +10,7 @@ const navLinks = [
   { label: 'Solutions', to: '/schools' },
   { label: 'Programs', to: '/programs' },
   { label: 'Projects', to: '/projects' },
-  { label: 'Space Labs', to: '/space', icon: Rocket, comingSoon: true },
+  { label: 'Astro Labs', to: '/space', icon: Rocket, comingSoon: true },
   { label: 'About', to: '/about' },
   { label: 'Contact', to: '/contact' },
 ];
@@ -50,7 +50,7 @@ export default function Navbar() {
                   type="button"
                   disabled
                   aria-disabled="true"
-                  title="Space Labs — Coming Soon"
+                  title="Astro Labs — Coming Soon"
                   className="relative flex cursor-not-allowed items-center gap-1.5 rounded-lg px-3 py-2 text-sm font-medium text-navy-400 opacity-80"
                 >
                   {Icon && <Icon className="h-3.5 w-3.5" />}
@@ -79,7 +79,7 @@ export default function Navbar() {
               type="button"
               disabled
               aria-disabled="true"
-              title="Space Labs — Coming Soon"
+              title="Astro Labs — Coming Soon"
               className="flex w-full cursor-not-allowed items-center gap-2 rounded-lg px-4 py-3 text-left text-sm font-medium text-navy-400 opacity-80"
             >
               {Icon && <Icon className="h-4 w-4" />}
